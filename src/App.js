@@ -15,12 +15,55 @@ import Close from "./img/icon-close.svg"
 import LogoName from "./img/logo.svg"
 
 
-
 function App() {
 
-  const [score, setScore] = useState(5)
+  const [score, setScore] = useState(0)
 
   const [choix, setChoix] = useState("")
+
+  
+  let randomise = ["Rock", "Papper", "Scissors"]
+  
+  let brain = Math.floor(Math.random(randomise) * 3)
+  let newRandom = randomise[brain]
+  
+  const [random, setRandom] = useState(newRandom)
+
+
+  if (choix == "Rock" && random == "Scissors") {
+    setScore (
+      +1
+    )
+    setChoix (
+      ""
+    )
+  } else if (choix == "Papper" && random == "Scissors") {
+    setChoix (
+      ""
+    )
+  } else if (choix == "Scissors" && random == "Papper") {
+    setScore (
+    +1
+    )
+    setTimeout(() => {
+      setChoix (
+        ""
+        )
+    }, 1000);
+    
+  } else if (choix == "Papper" && random == "Scissors") {
+    setChoix (
+      ""
+    )
+  } else if (choix == "Papper" && random == "Rock") {
+    setScore ( 
+      +1
+    )
+    setChoix (
+      ""
+    )
+  }
+
 
   return (
     <div className="App h-screen w-screen bg-blue-950 flex justify-center flex-col">
@@ -41,7 +84,7 @@ function App() {
         </div>
 
         {
-          choix == "" ? <Firstcomp setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors}></Firstcomp> : <Secondcomp setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} choix={choix}></Secondcomp>
+          choix == "" ? <Firstcomp setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} score={score} setScore={setScore}></Firstcomp> : <Secondcomp setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} choix={choix} newRandom={newRandom} random={random} setRandom={setRandom} score={score} setScore={setScore}></Secondcomp>
         }
       
     </div>

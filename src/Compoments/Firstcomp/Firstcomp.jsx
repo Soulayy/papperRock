@@ -6,15 +6,15 @@ export default function Firstcomp(props) {
         <div className='h-[85%] w-[90%] flex justify-center items-center relative '>
 
           <div className='h-[140px] w-[140px] rounded-full border-[15px] bg-white border-red-600 absolute bottom-[10%] flex justify-center items-center shadow-gray-600 shadow-inner'>
-            <img onClick={() => props.setChoix("Rock")} src={props.Rock} alt="" srcset="" />
+            <img onClick={() => props.setChoix("Rock")} src={props.Rock} />
           </div>
 
           <div className='h-[140px] w-[140px] rounded-full border-[15px] bg-white border-blue-700 absolute left-[35%] top-[1%] flex justify-center items-center shadow-gray-600 shadow-inner'>
-            <img onClick={() => props.setChoix("Papper")} src={props.Papper} alt="" srcset="" />
+            <img onClick={() => props.setChoix("Papper")} src={props.Papper}  />
           </div>
 
           <div className='h-[140px] w-[140px] rounded-full  border-[15px] bg-white border-yellow-300 absolute right-[35%] top-[1%] flex justify-center items-center shadow-gray-600 shadow-inner'>
-            <img onClick={() => props.setChoix("Scissors")} src={props.Scissors} alt="" srcset="" />
+            <img onClick={() => props.setChoix("Scissors")} src={props.Scissors} />
           </div>
 
         </div>
