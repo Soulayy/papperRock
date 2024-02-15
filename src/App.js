@@ -30,39 +30,39 @@ function App() {
   const [random, setRandom] = useState(newRandom)
 
 
-  if (choix == "Rock" && random == "Scissors") {
-    setScore (
-      +1
-    )
-    setChoix (
-      ""
-    )
-  } else if (choix == "Papper" && random == "Scissors") {
-    setChoix (
-      ""
-    )
-  } else if (choix == "Scissors" && random == "Papper") {
-    setScore (
-    +1
-    )
-    setTimeout(() => {
-      setChoix (
-        ""
-        )
-    }, 1000);
+  // if (choix == "Rock" && random == "Scissors") {
+  //   setScore (
+  //     +1
+  //   )
+  //   setChoix (
+  //     ""
+  //   )
+  // } else if (choix == "Papper" && random == "Scissors") {
+  //   setChoix (
+  //     ""
+  //   )
+  // } else if (choix == "Scissors" && random == "Papper") {
+  //   setScore (
+  //   +1
+  //   )
+  //   setTimeout(() => {
+  //     setChoix (
+  //       ""
+  //       )
+  //   }, 1000);
     
-  } else if (choix == "Papper" && random == "Scissors") {
-    setChoix (
-      ""
-    )
-  } else if (choix == "Papper" && random == "Rock") {
-    setScore ( 
-      +1
-    )
-    setChoix (
-      ""
-    )
-  }
+  // } else if (choix == "Papper" && random == "Scissors") {
+  //   setChoix (
+  //     ""
+  //   )
+  // } else if (choix == "Papper" && random == "Rock") {
+  //   setScore ( 
+  //     +1
+  //   )
+  //   setChoix (
+  //     ""
+  //   )
+  // }
 
 
   return (
