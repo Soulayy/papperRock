@@ -21,6 +21,7 @@ function App() {
 
   const [choix, setChoix] = useState("")
 
+  const [again, setAgain] = useState(true)
   
   let randomise = ["Rock", "Papper", "Scissors"]
   
@@ -30,39 +31,30 @@ function App() {
   const [random, setRandom] = useState(newRandom)
 
 
-  // if (choix == "Rock" && random == "Scissors") {
-  //   setScore (
-  //     +1
-  //   )
-  //   setChoix (
-  //     ""
-  //   )
-  // } else if (choix == "Papper" && random == "Scissors") {
-  //   setChoix (
-  //     ""
-  //   )
-  // } else if (choix == "Scissors" && random == "Papper") {
-  //   setScore (
-  //   +1
-  //   )
-  //   setTimeout(() => {
-  //     setChoix (
-  //       ""
-  //       )
-  //   }, 1000);
-    
-  // } else if (choix == "Papper" && random == "Scissors") {
-  //   setChoix (
-  //     ""
-  //   )
-  // } else if (choix == "Papper" && random == "Rock") {
-  //   setScore ( 
-  //     +1
-  //   )
-  //   setChoix (
-  //     ""
-  //   )
-  // }
+  let game = (random,choix) =>{
+    if (choix == random) {
+      return "DRAW"
+    }else if (random == Paper ) {
+        if (choix == Scissors) {
+            return "LOSE"
+        }else{
+          return "WIN"
+        }
+    }else if (random == Rock) {
+        if (choix == Paper) {
+            return "LOSE"
+        }else{
+            return "WIN"
+        }
+    }else if (random == Scissors) {
+        if (choix == Rock) {
+            return "LOSE"
+        }else{
+            return "WIN"
+        }
+    }
+    }
+
 
 
   return (
@@ -84,7 +76,7 @@ function App() {
         </div>
 
         {
-          choix == "" ? <Firstcomp setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} score={score} setScore={setScore}></Firstcomp> : <Secondcomp setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} choix={choix} newRandom={newRandom} random={random} setRandom={setRandom} score={score} setScore={setScore}></Secondcomp>
+          again ? <Firstcomp setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} score={score} setScore={setScore}></Firstcomp> : <Secondcomp setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} choix={choix} newRandom={newRandom} random={random} setRandom={setRandom} score={score} setScore={setScore}></Secondcomp>
         }
       
     </div>
