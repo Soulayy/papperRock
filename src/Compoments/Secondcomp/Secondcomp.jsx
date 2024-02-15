@@ -38,9 +38,9 @@ export default function Secondcomp(props) {
                     </div>
                 </div>
 
-                <div className="w-[20%] h-[99%] bg-lime-600 flex justify-center items-center flex-col gap-5">
-                    <p className="text-5xl">{props.game(props.random, props.choix)}</p>
-                    <button onClick={() => props.setAgain(true)} className="btn bg-white">PLAY AGAIN</button>
+                <div className="w-[20%] h-[99%] bg-lime-600 flex justify-center i${tems-center flex-col gap-5">
+                    <p className="text-5xl">{props.game(props.random, props.choix)} </p>
+                    <button onClick={() => (props.setAgain(true), props.point(props.choix))} className="btn bg-white">PLAY AGAIN</button>
                 </div>
                 <div className="h-[80%] w-[40%] flex justify-around items-center flex-col">
                     <div>

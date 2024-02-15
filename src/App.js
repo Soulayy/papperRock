@@ -37,6 +37,14 @@ function App() {
       randomise[getRandomInt(3)]
     )
   }
+  
+  let point = (choix) => {
+    if (choix == "WIN") {
+      setScore(
+        +1
+      )
+    } 
+  }
 
 
   let game = (choix, random) =>{
@@ -84,7 +92,7 @@ function App() {
         </div>
 
         {
-          again ? <Firstcomp randomchoice={randomchoice} setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} score={score} setScore={setScore} game={game}></Firstcomp> : <Secondcomp game={game} setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} choix={choix} random={random} setRandom={setRandom} score={score} setScore={setScore}></Secondcomp>
+          again ? <Firstcomp randomchoice={randomchoice} setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} score={score} setScore={setScore} game={game}></Firstcomp> : <Secondcomp point={point} game={game} setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} choix={choix} random={random} setRandom={setRandom} score={score} setScore={setScore}></Secondcomp>
         }
       
     </div>
