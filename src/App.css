@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.fTriangle {
+  background-image: url(./img/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%;
+}
