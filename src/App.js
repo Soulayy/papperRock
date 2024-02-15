@@ -18,36 +18,44 @@ import LogoName from "./img/logo.svg"
 function App() {
 
   const [score, setScore] = useState(0)
-
+  
   const [choix, setChoix] = useState("")
-
+  
   const [again, setAgain] = useState(true)
   
-  let randomise = ["Rock", "Papper", "Scissors"]
+  let getRandomInt = (max) =>{
+    return Math.floor(Math.random() * max);
+  }
   
-  let brain = Math.floor(Math.random(randomise) * 3)
-  let newRandom = randomise[brain]
+  const [randomise, setRandomise] = useState(["Rock", "Papper", "Scissors"])
   
-  const [random, setRandom] = useState(newRandom)
+
+  const [random, setRandom] = useState("")
+
+  let randomchoice = () => {
+    setRandom(
+      randomise[getRandomInt(3)]
+    )
+  }
 
 
-  let game = (random,choix) =>{
+  let game = (choix, random) =>{
     if (choix == random) {
       return "DRAW"
-    }else if (random == Paper ) {
-        if (choix == Scissors) {
+    }else if (random == "Papper" ) {
+        if (choix == "Scissors") {
             return "LOSE"
         }else{
           return "WIN"
         }
-    }else if (random == Rock) {
-        if (choix == Paper) {
+    }else if (random == "Rock") {
+        if (choix == "Papper") {
             return "LOSE"
         }else{
             return "WIN"
         }
-    }else if (random == Scissors) {
-        if (choix == Rock) {
+    }else if (random == "Scissors") {
+        if (choix == "Rock") {
             return "LOSE"
         }else{
             return "WIN"
@@ -63,7 +71,7 @@ function App() {
             <div className="h-[200px] w-[700px]  rounded-xl border-[2px] flex justify-center items-center">
                 <div className="h-[90%] w-[45%] flex justify-center items-start flex-col">
                     <p className="text-white text-5xl font-semibold">ROCK</p>
-                    <p className="text-white text-5xl font-semibold">PAPER</p>
+                    <p className="text-white text-5xl font-semibold">Papper</p>
                     <p className="text-white text-5xl font-semibold">SCISSORS</p>
                 </div>
                 <div className="h-[80%] w-[45%] flex justify-center items-end flex-col">
@@ -76,7 +84,7 @@ function App() {
         </div>
 
         {
-          again ? <Firstcomp setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} score={score} setScore={setScore}></Firstcomp> : <Secondcomp setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} choix={choix} newRandom={newRandom} random={random} setRandom={setRandom} score={score} setScore={setScore}></Secondcomp>
+          again ? <Firstcomp randomchoice={randomchoice} setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} score={score} setScore={setScore} game={game}></Firstcomp> : <Secondcomp game={game} setAgain={setAgain} setChoix={setChoix} Rock={Rock} Papper={Papper} Scissors={Scissors} choix={choix} random={random} setRandom={setRandom} score={score} setScore={setScore}></Secondcomp>
         }
       
     </div>

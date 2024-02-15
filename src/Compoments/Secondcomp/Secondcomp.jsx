@@ -39,7 +39,7 @@ export default function Secondcomp(props) {
                 </div>
 
                 <div className="w-[20%] h-[99%] bg-lime-600 flex justify-center items-center flex-col gap-5">
-                    <p className="text-5xl"></p>
+                    <p className="text-5xl">{props.game(props.random, props.choix)}</p>
                     <button onClick={() => props.setAgain(true)} className="btn bg-white">PLAY AGAIN</button>
                 </div>
                 <div className="h-[80%] w-[40%] flex justify-around items-center flex-col">
@@ -48,7 +48,7 @@ export default function Secondcomp(props) {
                     </div>
                     <div>
                         {           
-                            props.newRandom == "Rock" ? 
+                            props.random == "Rock" ? 
                             <div className='h-[200px] w-[200px] rounded-full  border-[15px] bg-white border-red-600 right-[35%] top-[1%] flex justify-center items-center shadow-gray-600 shadow-inner'>
                             <img src={props.Rock} alt="" />
                             </div>
@@ -56,7 +56,7 @@ export default function Secondcomp(props) {
                             ""
                         }
                         {           
-                            props.newRandom == "Papper" ? 
+                            props.random == "Papper" ? 
                             <div className='h-[200px] w-[200px] rounded-full  border-[15px] bg-white border-blue-700 right-[35%] top-[1%] flex justify-center items-center shadow-gray-600 shadow-inner'>
                             <img src={props.Papper} alt="" />
                             </div>
@@ -64,7 +64,7 @@ export default function Secondcomp(props) {
                             ""
                         }
                         {           
-                            props.newRandom == "Scissors" ? 
+                            props.random == "Scissors" ? 
                             <div className='h-[200px] w-[200px] rounded-full  border-[15px] bg-white border-yellow-300 right-[35%] top-[1%] flex justify-center items-center shadow-gray-600 shadow-inner'>
                             <img src={props.Scissors} alt="" />
                             </div>
