@@ -41,7 +41,7 @@ function App() {
   let point = (choix) => {
     if (choix == "WIN") {
       setScore(
-        +1
+        score+1
       )
     } 
   }
